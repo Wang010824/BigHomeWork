@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="vertical">
+    //顶部菜单栏
+    <FrameLayout
+        android:id="@+id/fenqu1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageButton
+            android:id="@+id/myset"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#0000"
+            android:src="@mipmap/set" />
+
+    </FrameLayout>
+
+    //头像昵称
+    <RelativeLayout
+        android:id="@+id/touxiangnicheng"
+        style="@style/wode_touxiangnicheng"
+        >
+
+        <com.example.optimization.CircleImage
+            android:id="@+id/wode_touxiang"
+            style="@style/wode_touxiang"
+            android:src="@mipmap/wode_touxiang" />
+        <TextView
+            android:id="@+id/wode_nicheng"
+            style="@style/wode_nicheng"
+            android:text="@string/wode_nicheng"
+            android:layout_toRightOf="@+id/wode_touxiang" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        style="@style/wode_huiyuanzhongxin"
+        android:background="@drawable/wode_corner_up">
+        <TextView
+            android:id="@+id/hongbaoqiandao"
+            style="@style/wode_huiyuanzhongxin1"
+            android:text="@string/hongbaoqiandao" />
+        <TextView
+            style="@style/wode_huiyuanzhongxin2"
+            android:layout_below="@+id/hongbaoqiandao"
+            android:text="@string/hongbaoshengqianka2" />
+        <ImageView
+            android:id="@+id/huiyuanzhongxin_i"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/wode_fenge1"
+            android:src="@mipmap/redpacket"
+            android:layout_marginRight="40px"/>
+
+        //分割线
+        <TextView
+            android:id="@+id/wode_fenge1"
+            style="@style/wode_fengexian"
+            android:background="#d3d3d3"
+            android:layout_centerInParent="true"
+            />
+
+        <TextView
+            android:id="@+id/tianmaojifen"
+            style="@style/wode_huiyuanzhongxin1"
+            android:layout_toRightOf="@+id/wode_fenge1"
+            android:text="我的积分" />
+        <TextView
+            android:layout_toRightOf="@+id/wode_fenge1"
+            android:text="@string/tianmaojifen2"
+            android:layout_below="@+id/tianmaojifen"
+            style="@style/wode_huiyuanzhongxin2"/>
+
+        <ImageView
+            android:id="@+id/tianmaojifen_i"
+            style="@style/wode_huiyuanzhongxin_img"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/integral" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width = "match_parent"
+        android:layout_height = "80dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft = "11.2dp"
+        android:layout_marginRight = "11.2dp"
+        android:orientation = "horizontal"
+        android:background="@drawable/background_circle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/mywallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/wallet"
+                android:drawablePadding="1dp"
+                android:gravity="center"
+                android:text="我的钱包"
+                android:textColor="@drawable/text_color" />
+
+            <TextView
+                android:id="@+id/mytask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/task"
+                android:drawablePadding="1dp"
+                android:gravity="center"
+                android:text="我的任务"
+                android:textColor="@drawable/text_color" />
+
+            <TextView
+                android:id="@+id/mycomment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/comment"
+                android:drawablePadding="1dp"
+                android:gravity="center"
+                android:text="我的评价"
+                android:textColor="@drawable/text_color" />
+
+            <TextView
+                android:id="@+id/myaftersale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@mipmap/aftersale"
+                android:drawablePadding="1dp"
+                android:gravity="center"
+                android:text="售后"
+                android:textColor="@drawable/text_color" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

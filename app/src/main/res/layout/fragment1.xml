@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="99dp"
+        android:background="@drawable/gradient_ramp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/erweima"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:background="#0000"
+                android:src="@drawable/erweima" />
+            <EditText
+                android:id="@+id/edit_query"
+                android:layout_width="260dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="10dp"
+                android:drawableLeft="@drawable/fangdajing"
+                android:paddingLeft="6dp"
+                android:drawableRight="@drawable/cinema"
+                android:paddingRight="11dp"
+                android:hint="河南大学"
+                android:textColor="@color/teal_700"
+                android:background="@drawable/bg_edittext_normal" />
+
+            <ImageButton
+                android:id="@+id/hongbao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginRight="10dp"
+                android:background="#0000"
+                android:src="@drawable/hongbao">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/huiyuanquanyi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginRight="10dp"
+                android:background="#0000"
+                android:src="@drawable/huiyuan">
+            </ImageButton>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp">
+
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="134dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:entries="@array/adress" />
+
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:entries="@array/price" />
+
+            <Spinner
+                android:id="@+id/spinner3"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:entries="@array/time" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"/>
+
+
+
+    <!--接受任务页面-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:background="#4BDDBFBF"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/mylistview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:divider="#4BDDBFBF"
+            android:dividerHeight="10dp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
