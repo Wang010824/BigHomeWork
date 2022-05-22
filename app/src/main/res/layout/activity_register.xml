@@ -28,14 +28,15 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
-            android:hint="请输入邮箱号" />
+            android:hint="请输入学号或教职工号"
+            android:id="@+id/rsgister_username"/>
 
         <EditText
             android:layout_width="300dp"
-
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:hint="请输入手机号" />
+            android:hint="请输入手机号"
+            android:id="@+id/rsgister_phone"/>
 
         <EditText
             android:layout_width="300dp"
@@ -43,7 +44,8 @@
             android:layout_marginTop="15dp"
             android:drawableRight="@drawable/unsee"
             android:hint="请设置密码"
-            android:paddingRight="15dp" />
+            android:paddingRight="15dp"
+            android:id="@+id/rsgister_password1"/>
 
         <EditText
             android:layout_width="300dp"
@@ -51,7 +53,8 @@
             android:layout_marginTop="15dp"
             android:drawableRight="@drawable/unsee"
             android:hint="请再次输入密码"
-            android:paddingRight="15dp" />
+            android:paddingRight="15dp"
+            android:id="@+id/rsgister_password2"/>
 
         <Button
             android:layout_width="300dp"
@@ -60,7 +63,8 @@
             android:background="@drawable/button_circle1"
             android:text="注册"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:id="@+id/rsgister_button"/>
 
     </LinearLayout>
 
