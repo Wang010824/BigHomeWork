@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="任务评价"
+        android:layout_marginTop="15sp"
+        android:layout_gravity="center"/>
+    <EditText
+        android:id="@+id/etxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="5"
+        android:hint="请评价本次任务的服务质量"
+        android:textSize="25sp"/>
+    <TextView
+        android:id="@+id/txt"
+        android:layout_below="@id/etxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="服务评分"
+        android:textColor="@color/blue"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"/>
+
+    <RatingBar
+        android:id="@+id/ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt"
+        android:layout_marginLeft="90sp"
+        android:progressTint="@color/yellow"
+        android:rating="0"
+        android:stepSize="0.5" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ratingbar"
+        android:layout_alignRight="@id/txt"
+        android:layout_marginLeft="140sp"
+        android:layout_marginTop="10sp"
+        android:text="发表评价"
+        android:textSize="30sp" />
+</LinearLayout>
