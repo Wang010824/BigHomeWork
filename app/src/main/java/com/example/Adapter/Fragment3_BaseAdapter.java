@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.Activity.MessageDatabase;
 import com.example.myapplication.R;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class Fragment3_BaseAdapter extends BaseAdapter {
@@ -56,7 +57,7 @@ public class Fragment3_BaseAdapter extends BaseAdapter {
         MessageDatabase message = message_list.get(i);
         viewHolder.message_name.setText((message.getMessage_name()));
         viewHolder.last_message.setText((message.getLast_message()));
-        viewHolder.message_time.setText((message.getMessage_time()));
+        viewHolder.message_time.setText((Init_time(message.getMessage_time())));
         viewHolder.header.setImageResource(message.getHeader());
         return view;
     }
@@ -68,5 +69,26 @@ public class Fragment3_BaseAdapter extends BaseAdapter {
         TextView message_time;          //最后一条消息的时间
         ImageView header;               //头像
         List<String> message_detail;    //所有消息
+    }
+
+    private String Init_time(String time) {
+        Calendar calendar = Calendar.getInstance();
+        String year =  String.format("%04d", calendar.get(Calendar.YEAR));
+        String month = String.format("%02d", calendar.get(Calendar.MONTH)+1);
+        String date = String.format("%02d", calendar.get(Calendar.DATE));
+        String t = time.substring(0,time.indexOf('日') + 1);
+        String newt = year + "年" + month + "月" + date + "日";
+        if(newt.equals(t)){
+            String hour = time.substring(time.indexOf("日") + 1,time.indexOf("时"));
+            String minute = time.substring(time.indexOf("时") + 1, time.indexOf("分"));
+            t = hour + ":" + minute;
+        }else {
+            newt = year;
+            t = time.substring(0,time.indexOf('年'));
+            if(newt.equals(t)) {
+                t = time.substring(time.indexOf("年")+1,time.indexOf("日")+1);
+            }
+        }
+        return t;
     }
 }
