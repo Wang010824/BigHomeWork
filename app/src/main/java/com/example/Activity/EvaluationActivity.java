@@ -24,7 +24,6 @@ public class EvaluationActivity extends Activity {
                 float rating=ratingBar.getRating();//获取当前的星数
                 Toast.makeText(EvaluationActivity.this,
                         "你评价了"+rating+"颗星,感谢您的支持！",Toast.LENGTH_LONG).show();
-
             }
         });
     }
