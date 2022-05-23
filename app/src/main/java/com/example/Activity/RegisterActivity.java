@@ -35,16 +35,16 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String buttonusername=rsgister_username.getText().toString();
                 String buttonpassword1=rsgister_password1.getText().toString();
-                String buttonpassord2=rsgister_password2.getText().toString();
+                String buttonpassword2=rsgister_password2.getText().toString();
                 String buttonphone=rsgister_phone.getText().toString();
-                if(buttonpassword1==buttonpassord2){
+                if(buttonpassword1.equals(buttonpassword2)){
                     if(dbutil.register(buttonusername,buttonphone,buttonpassword1)){
                         Toast.makeText(RegisterActivity.this,"注册成功",Toast.LENGTH_SHORT).show();
                         finish();
                     }else{
                         Toast.makeText(RegisterActivity.this,"该用户已存在",Toast.LENGTH_SHORT).show();
                     }
-                }else{
+                } else{
                     Toast.makeText(RegisterActivity.this,"两次输入的密码不一致",Toast.LENGTH_SHORT).show();
                 }
             }
