@@ -32,10 +32,11 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="请输入用户名或学号"
+                android:hint="请输入用教职工号或学号"
                 android:layout_marginLeft="7dp"
                 android:textColorHint="@color/grey"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:id="@+id/edittext_username"/>
         </LinearLayout>
     </FrameLayout>
     <FrameLayout
@@ -63,7 +64,8 @@
                 android:hint="请输入您的密码"
                 android:layout_marginLeft="7dp"
                 android:textColorHint="@color/grey"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:id="@+id/edittext_password"/>
         </LinearLayout>
     </FrameLayout>
     <FrameLayout

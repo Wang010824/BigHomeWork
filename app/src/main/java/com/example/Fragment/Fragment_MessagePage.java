@@ -22,7 +22,6 @@ import com.example.myapplication.R;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class Fragment_MessagePage extends Fragment {
     private ListView fragment3_listview;
     private List<MessageDatabase> list = new ArrayList<>();
@@ -36,7 +35,7 @@ public class Fragment_MessagePage extends Fragment {
             "李念瑶",
             "席振华",
             "藏怀幕",
-            "青衫烟雨客",
+            "青衫烟雨客青衫烟雨客青衫烟雨客青衫烟雨客青衫烟雨客青衫烟雨客",
             "公孙如雪"};
     private String[] last_message = {
             "你好啊！",
@@ -51,18 +50,19 @@ public class Fragment_MessagePage extends Fragment {
             "嘿,小伙子手机不错啊！",
             "来了,来了!"};
     private String[] message_time = {
-            "2021年10月1日",
-            "10:21",
-            "昨天",
-            "8:11",
-            "9月11日",
-            "10::10",
-            "10:21",
-            "前天",
-            "0:11",
-            "4月10日",
-            "2019年12月19日",
-            "2020年6月1日",};
+            "2022年05月22日05时10分",
+            "2021年10月01日10时21分",
+            "2021年10月08日15时10分",
+            "2022年04月03日15时10分",
+            "2022年04月05日15时10分",
+            "2022年03月03日15时10分",
+            "2022年02月03日15时10分",
+            "2022年01月03日15时10分",
+            "2022年01月23日15时10分",
+            "2022年05月03日15时10分",
+            "2019年10月03日15时10分",
+            "2020年10月03日15时10分",
+    };
     private int header[] = {
             R.drawable.photo,
             R.drawable.photo1,
@@ -86,10 +86,11 @@ public class Fragment_MessagePage extends Fragment {
 
         //将message添加到list中
         fragment3_listview = view.findViewById(R.id.fragment3_listview);
-        for(int i = 0; i < 11; i ++){
-                message = new MessageDatabase(message_name[i],last_message[i],message_time[i],header[i]);
-                list.add(message);
+        for(int i = 0; i < message_name.length; i ++){
+            message = new MessageDatabase(message_name[i],last_message[i],message_time[i], header[i]);
+            Add_List(list, message);
         }
+
 
         //为页面添加baseAdapter
         Fragment3_BaseAdapter baseAdapter = new Fragment3_BaseAdapter(fragment3_listview.getContext(), list);
@@ -109,6 +110,7 @@ public class Fragment_MessagePage extends Fragment {
 
         });
 
+        //长按 监听事件
         fragment3_listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -131,6 +133,56 @@ public class Fragment_MessagePage extends Fragment {
 
 
         return view;
+    }
+
+    //插入, 排序
+    private static void Add_List(List<MessageDatabase> list, MessageDatabase message){
+        String n = Translate(message.getMessage_time());
+        int t = 0;
+        int i;
+        for(i = 0; i < list.size(); i ++){
+            String m = Translate(list.get(i).getMessage_time());
+            if(Compare(n, m)){
+                t = i;
+                break;
+            }
+        }
+        if(i == list.size())
+            t = i;
+        list.add(t, message);
+    }
+
+
+    //比较时间先后
+    private static boolean Compare(String n, String m) {
+        for(int i = 0; i < n.length(); i ++) {
+            if(n.charAt(i) > m.charAt(i))
+            {
+                return true;
+            }
+            else if(n.charAt(i) == m.charAt(i))
+            {
+                continue;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    //将时间转换为纯数字字符串
+    private static String Translate(String n) {
+
+        String year1 = n.substring(0,n.indexOf("年"));
+        String month1 = n.substring(n.indexOf("年")+1, n.indexOf("月"));
+        String date1 = n.substring(n.indexOf("月")+1, n.indexOf("日"));
+        String hour1 = n.substring(n.indexOf("日")+1, n.indexOf("时"));
+        String minute1 = n.substring(n.indexOf("时")+1, n.indexOf("分"));
+        String time = year1+month1+date1+hour1+minute1;
+        return time;
     }
 
 
