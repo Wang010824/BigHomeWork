@@ -13,6 +13,7 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
             android:layout_gravity="left"
             android:src="@drawable/fragment2_03"/>
         <TextView
@@ -21,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:paddingLeft="30dp"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:layout_marginTop="2dp"
             android:text="彤雨晴"/>
         <ImageView
@@ -34,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:paddingRight="30dp"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:layout_marginTop="2dp"
             android:text="退款"/>
     </FrameLayout>
@@ -80,17 +81,24 @@
     </FrameLayout>
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="30dp">
+
         <Button
             android:layout_gravity="right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_circle3"
+            android:textColor="#FF6F00"
             android:text="查看详情"/>
         <Button
             android:layout_gravity="right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="100dp"
+            android:background="@drawable/button_circle2"
             android:text="删除记录"/>
     </FrameLayout>
 </LinearLayout>

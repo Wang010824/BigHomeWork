@@ -3,11 +3,39 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidStudioWorkSpace/new/BigHomeWork/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioWorkSpace/new/BigHomeWork/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioWorkSpace/new/BigHomeWork/app/src/main/res/layout/activity_chat.xml" value="0.12310030395136778" />
+        <entry key="..\:/AndroidStudioWorkSpace/new/BigHomeWork/app/src/main/res/layout/chat_msg_item.xml" value="0.19384057971014493" />
+        <entry key="..\:/AndroidStudioWorkSpace/new/BigHomeWork/app/src/main/res/layout/fragment3_message_item.xml" value="0.1" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1175" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/bg_edittext_normal.xml" value="0.1035" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/button_circle1.xml" value="0.1035" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/button_circle2.xml" value="0.1" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/button_circle3.xml" value="0.1795" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/button_circle4.xml" value="0.1595" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/search_button.xml" value="0.1035" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable/background_circle.xml" value="0.1175" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable/background_circle_down.xml" value="0.1175" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/activity_evaluation.xml" value="0.253125" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/activity_merchandise_list.xml" value="0.1" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/evaluation_adapter.xml" value="0.2509057971014493" />
         <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment1.xml" value="0.25677083333333334" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment1_listview.xml" value="0.253125" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment2.xml" value="0.253125" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment3_message_item.xml" value="0.2509057971014493" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment4.xml" value="0.1515625" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment4_aftersale.xml" value="0.12310030395136778" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment4_aftersale_listview.xml" value="0.26621847886098404" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment4_evaluation.xml" value="0.26621847886098404" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment4_home_page__after_sale.xml" value="0.1" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment4_home_page__after_sale_listview.xml" value="0.24954710144927536" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment4_set.xml" value="0.2509057971014493" />
         <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment4_task.xml" value="0.253125" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment4_task_listview.xml" value="0.26621847886098404" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment4_wallet.xml" value="0.253125" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment_merchandise_list.xml" value="0.23854166666666668" />
         <entry key="..\:/BigHomeWork/app/src/src/main/res/layout/fragment1.xml" value="0.253125" />
+        <entry key="..\:/gitcode/BigHomeWork/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/gitcode/BigHomeWork/app/src/main/res/layout/activity_register.xml" value="0.18177083333333333" />
       </map>
     </option>
   </component>

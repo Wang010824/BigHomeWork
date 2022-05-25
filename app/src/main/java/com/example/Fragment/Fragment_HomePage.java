@@ -56,6 +56,18 @@ public class Fragment_HomePage extends Fragment {
             }
         });
 
+        //评价
+        TextView mycomment = (TextView)getActivity().findViewById(R.id.mycomment);
+        mycomment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent fragment_homepage_evaluation=new Intent();
+                fragment_homepage_evaluation.setClass(getActivity(),Fragment_HomePage_Evaluation.class);
+                startActivity(fragment_homepage_evaluation);
+            }
+        });
+
+        //售后
         TextView myAfterSale = (TextView)getActivity().findViewById(R.id.myaftersale);
         myAfterSale.setOnClickListener(new View.OnClickListener() {
 

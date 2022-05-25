@@ -140,7 +140,7 @@
                 android:drawableTop="@mipmap/aftersale"
                 android:drawablePadding="1dp"
                 android:gravity="center"
-                android:text="售后"
+                android:text="退款/售后"
                 android:textColor="@drawable/text_color" />
         </LinearLayout>
 

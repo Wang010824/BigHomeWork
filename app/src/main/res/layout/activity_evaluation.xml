@@ -8,6 +8,7 @@
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:text="任务评价"
+        android:textColor="@color/black"
         android:layout_marginTop="15sp"
         android:layout_gravity="center"/>
     <EditText
@@ -29,6 +30,7 @@
         android:textSize="30sp"/>
 
     <RatingBar
+        android:layout_marginTop="10dp"
         android:id="@+id/ratingbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,12 +42,12 @@
 
     <Button
         android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:layout_below="@id/ratingbar"
         android:layout_alignRight="@id/txt"
         android:layout_marginLeft="140sp"
         android:layout_marginTop="10sp"
         android:text="发表评价"
-        android:textSize="30sp" />
+        android:textSize="25sp" />
 </LinearLayout>

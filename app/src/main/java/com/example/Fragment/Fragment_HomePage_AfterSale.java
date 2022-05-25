@@ -1,20 +1,15 @@
 package com.example.Fragment;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
-import com.example.Adapter.Fragment1_Adapter;
-import com.example.Adapter.Fragment4_Adapter;
+import com.example.Adapter.Fragment4_AfterSale_Adapter;
 import com.example.myapplication.R;
 import com.example.optimization.AfterSales;
-import com.example.optimization.Tasks;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +18,7 @@ public class Fragment_HomePage_AfterSale extends AppCompatActivity {
 
     private ListView mylistviews;
     private List<AfterSales> datas= new ArrayList<>();
-    private Fragment4_Adapter adapter4;
+    private Fragment4_AfterSale_Adapter adapter4;
 
     private String[] message_name = {
             "彤雨晴",
@@ -83,13 +78,18 @@ public class Fragment_HomePage_AfterSale extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment4_home_page__after_sale);
-
+        setContentView(R.layout.fragment4_aftersale);
+        TextView myback = (TextView)findViewById(R.id.myback);
+        myback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         initDatas();//初始化数据
-        mylistviews= findViewById(R.id.mylistview);
-        Fragment4_Adapter adapter = new Fragment4_Adapter(Fragment_HomePage_AfterSale.this,
-                R.layout.fragment4_home_page__after_sale_listview, datas);
-        mylistviews = (ListView)findViewById(R.id.Listview_afterSale);
+        Fragment4_AfterSale_Adapter adapter = new Fragment4_AfterSale_Adapter(Fragment_HomePage_AfterSale.this,
+                R.layout.fragment4_aftersale_listview, datas);
+        mylistviews = (ListView)findViewById(R.id.listview_aftersale);
         mylistviews.setAdapter(adapter);
     }
 
