@@ -36,7 +36,8 @@
                 android:layout_marginLeft="7dp"
                 android:textColorHint="@color/grey"
                 android:textSize="15sp"
-                android:id="@+id/edittext_username"/>
+                android:id="@+id/edittext_username"
+                android:lines="1"/>
         </LinearLayout>
     </FrameLayout>
     <FrameLayout
@@ -65,7 +66,9 @@
                 android:layout_marginLeft="7dp"
                 android:textColorHint="@color/grey"
                 android:textSize="15sp"
-                android:id="@+id/edittext_password"/>
+                android:id="@+id/edittext_password"
+                android:lines="1"
+                android:inputType="textPassword"/>
         </LinearLayout>
     </FrameLayout>
     <FrameLayout

@@ -29,14 +29,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
             android:hint="请输入学号或教职工号"
-            android:id="@+id/rsgister_username"/>
+            android:id="@+id/rsgister_username"
+            android:lines="1"/>
 
         <EditText
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:hint="请输入手机号"
-            android:id="@+id/rsgister_phone"/>
+            android:id="@+id/rsgister_phone"
+            android:lines="1"/>
 
         <EditText
             android:layout_width="300dp"
@@ -45,7 +47,9 @@
             android:drawableRight="@drawable/unsee"
             android:hint="请设置密码"
             android:paddingRight="15dp"
-            android:id="@+id/rsgister_password1"/>
+            android:id="@+id/rsgister_password1"
+            android:lines="1"
+            android:inputType="textPassword"/>
 
         <EditText
             android:layout_width="300dp"
@@ -54,7 +58,9 @@
             android:drawableRight="@drawable/unsee"
             android:hint="请再次输入密码"
             android:paddingRight="15dp"
-            android:id="@+id/rsgister_password2"/>
+            android:id="@+id/rsgister_password2"
+            android:lines="1"
+            android:inputType="textPassword"/>
 
         <Button
             android:layout_width="300dp"
