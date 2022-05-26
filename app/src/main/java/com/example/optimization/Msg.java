@@ -1,4 +1,4 @@
-package com.example.Activity;
+package com.example.optimization;
 
 public class Msg {
     public static final int MSG_RECEIVE = 0;

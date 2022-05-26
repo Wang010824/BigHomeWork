@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.Activity.MessageDatabase;
+import com.example.optimization.MessageDatabase;
 import com.example.myapplication.R;
 
 import java.util.Calendar;

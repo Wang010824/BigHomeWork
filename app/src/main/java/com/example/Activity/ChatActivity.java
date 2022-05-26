@@ -3,27 +3,27 @@ package com.example.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.icu.util.BuddhistCalendar;
-import android.media.Image;
 import android.os.Bundle;
+import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.example.Adapter.MsgAdapter;
+import com.example.DataBase.DBUtil;
 import com.example.myapplication.R;
-import com.example.optimization.CircleImage;
+import com.example.optimization.Msg;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class ChatActivity extends Activity {
-
+    public DBUtil dbUtil = new DBUtil();
     private ListView listView;
     private MsgAdapter msgAdapter;
     private List<Msg> msgList = new ArrayList<Msg>();
@@ -35,6 +35,9 @@ public class ChatActivity extends Activity {
     private int header_right;       //右边自己的头像
     private Intent intent;
     private Bundle bundle;
+    private boolean b = false;      //是否消息更新
+    private String time = "";            //最后一条消息的时间
+    private String last_message = "";     //最后一条消息
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,13 +45,16 @@ public class ChatActivity extends Activity {
 
 
 
-        //返回按钮 添加监听事件
+        //返回按钮 添加监听事件,返回的时候消息时间更新。
         fanhui = findViewById(R.id.fanhui_btn);
         fanhui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
+                intent.putExtra("time",time);
+                intent.putExtra("last_message", last_message);
                 setResult(1,intent);
+                time = "";      //时间重新置为空
                 finish();
             }
         });
@@ -68,6 +74,9 @@ public class ChatActivity extends Activity {
                 if(!"".equals(message)) {
                     Msg msg = new Msg(message, Msg.MSG_SEND, header_left,header_right);
                     msgList.add(msg);
+                    last_message = message;
+                    b = true;
+                    time = GetTime();
                     msgAdapter.notifyDataSetChanged();//当有新消息时刷新
                     listView.setSelection(msgList.size() - 1);
                 }else {
@@ -85,7 +94,7 @@ public class ChatActivity extends Activity {
 
         //头像初始化
         header_left = bundle.getInt("header");
-        header_right = R.drawable.photo3;
+        header_right = R.mipmap.wode_touxiang;
 
 
         //名字初始化
@@ -101,34 +110,28 @@ public class ChatActivity extends Activity {
         msgList.add(msg);
         msg = new Msg("what's up", Msg.MSG_RECEIVE,header_left,header_right);
         msgList.add(msg);
-        msg = new Msg("1", Msg.MSG_RECEIVE,header_left,header_right);
-        msgList.add(msg);
-        msg = new Msg("2", Msg.MSG_RECEIVE,header_left,header_right);
-        msgList.add(msg);
-        msg = new Msg("3", Msg.MSG_RECEIVE,header_left,header_right);
-        msgList.add(msg);
-        msg = new Msg("4", Msg.MSG_RECEIVE,header_left,header_right);
-        msgList.add(msg);
-        msg = new Msg("5", Msg.MSG_RECEIVE,header_left,header_right);
-        msgList.add(msg);
-        msg = new Msg("6", Msg.MSG_RECEIVE,header_left,header_right);
-        msgList.add(msg);
-        msg = new Msg("7", Msg.MSG_RECEIVE,header_left,header_right);
-        msgList.add(msg);
-        msg = new Msg("8", Msg.MSG_RECEIVE,header_left,header_right);
-        msgList.add(msg);
-        msg = new Msg("9", Msg.MSG_RECEIVE,header_left,header_right);
-        msgList.add(msg);
-        msg = new Msg("10", Msg.MSG_RECEIVE,header_left,header_right);
-        msgList.add(msg);
-        msg = new Msg("11", Msg.MSG_RECEIVE,header_left,header_right);
-        msgList.add(msg);
-        msg = new Msg("12", Msg.MSG_RECEIVE,header_left,header_right);
-        msgList.add(msg);
-        msg = new Msg("13", Msg.MSG_RECEIVE,header_left,header_right);
-        msgList.add(msg);
 
 
+        msg = new Msg("你好,现在我们可以开始聊天了!", Msg.MSG_RECEIVE,header_left,header_right);
+        msgList.add(msg);
 
     }
+
+    public String GetTime(){
+        Calendar calendar = Calendar.getInstance();
+        String year =  String.format("%04d", calendar.get(Calendar.YEAR));
+        String month = String.format("%02d", calendar.get(Calendar.MONTH)+1);
+        String date = String.format("%02d", calendar.get(Calendar.DATE));
+        String hour = String.format("%02d", calendar.get(Calendar.HOUR_OF_DAY));
+        String minute = String.format("%02d", calendar.get(Calendar.MINUTE));
+        String time = year + "年" + month + "月" +
+                date + "日" + hour + "时" + minute + "分";
+        return time;
+    }
+
+    //将消息更新到数据库
+//    public void gengxin(String message, String to_name,String from_name){
+//
+//    }
+
 }

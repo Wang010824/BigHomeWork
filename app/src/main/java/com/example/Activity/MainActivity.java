@@ -46,11 +46,17 @@ public class MainActivity extends AppCompatActivity {
 
             username=edittext_username.getText().toString();
             password=edittext_password.getText().toString();
-            if(dbutil.SignIn(username,password)){
+            if(username.equals("")){
+                Toast.makeText(MainActivity.this,"请输入用户名",Toast.LENGTH_SHORT).show();
+            }
+            else if(password.isEmpty()){
+                Toast.makeText(MainActivity.this,"请输入密码",Toast.LENGTH_SHORT).show();
+            }
+            else if(dbutil.SignIn(username,password)){
             Intent home_intent=new Intent(MainActivity.this,FunctionActivity.class);
             startActivity(home_intent);
             }else{
-                Toast.makeText(MainActivity.this,username,Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,"帐号密码错误！",Toast.LENGTH_SHORT).show();
             }
 
         });
