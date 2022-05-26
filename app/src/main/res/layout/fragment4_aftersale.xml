@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    tools:context="com.example.Fragment.Fragment_HomePage_AfterSale">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,14 +16,13 @@
             android:layout_marginLeft="5dp"
             android:drawableLeft="@mipmap/leftarrow"
             android:gravity="center_vertical|left"
-            android:text="  任务"
+            android:text=" 退款/售后"
             android:textColor="@color/black"
             android:textSize="20sp" />
     </LinearLayout>
-
     <ListView
         android:layout_marginTop="10dp"
-        android:id="@+id/listview_task"
+        android:id="@+id/listview_aftersale"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_circle"

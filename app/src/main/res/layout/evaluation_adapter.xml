@@ -10,12 +10,13 @@
         android:layout_width="100sp"
         android:layout_height="93dp" />
 
-
     <TextView
         android:id="@+id/con"
         android:layout_width="200sp"
-        android:layout_height="95dp"
-        android:textSize="25sp" />
+        android:layout_height="93dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/blue"
+        android:textSize="20sp" />
 
     <Button
             android:layout_width="wrap_content"
@@ -23,8 +24,9 @@
             android:text="评价"
             android:id="@+id/btnn"
             android:textSize="20sp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="20sp"
-            android:background="@color/light_gray"
+            android:background="@color/blue"
             />
 
 

@@ -34,6 +34,13 @@ public class Fragment_HomePage_Evaluation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment4_evaluation);
+        TextView myback = (TextView)findViewById(R.id.myback);
+        myback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         eva_datas = new ArrayList<Map<String, Object>>();
         eva_listView = (ListView) findViewById(R.id.eva_listview);
 

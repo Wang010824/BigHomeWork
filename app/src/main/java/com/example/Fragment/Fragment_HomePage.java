@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -56,6 +55,7 @@ public class Fragment_HomePage extends Fragment {
                 startActivity(fragment_homepage_task);
             }
         });
+
         //评价
         TextView mycomment = (TextView)getActivity().findViewById(R.id.mycomment);
         mycomment.setOnClickListener(new View.OnClickListener() {
@@ -67,5 +67,16 @@ public class Fragment_HomePage extends Fragment {
             }
         });
 
+        //售后
+        TextView myAfterSale = (TextView)getActivity().findViewById(R.id.myaftersale);
+        myAfterSale.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent fragment_homepage_aftersale=new Intent();
+                fragment_homepage_aftersale.setClass(getActivity(), Fragment_HomePage_AfterSale.class);
+                startActivity(fragment_homepage_aftersale);
+            }
+        });
     }
 }
