@@ -84,6 +84,7 @@
         android:orientation="vertical">
 
         <RadioButton
+            android:id="@+id/radio_btn"
             android:layout_width="412dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"

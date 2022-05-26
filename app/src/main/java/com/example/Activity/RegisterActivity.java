@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ public class RegisterActivity extends AppCompatActivity {
     public EditText rsgister_password2;
     public EditText rsgister_username;
     public EditText rsgister_phone;
+    public RadioButton radioButton;
     public DBUtil dbutil = new DBUtil();
 
     @Override
@@ -30,6 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
         rsgister_password2 = findViewById(R.id.rsgister_password2);
         rsgister_username = findViewById(R.id.rsgister_username);
         rsgister_phone = findViewById(R.id.rsgister_phone);
+        radioButton = findViewById(R.id.radio_btn);
 
         rsgister_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,8 +51,13 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "请再次输入密码", Toast.LENGTH_SHORT).show();
                 } else if (buttonpassword1.equals(buttonpassword2)) {
                     if (dbutil.register(buttonusername, buttonphone, buttonpassword1)) {
-                        Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
-                        finish();
+                        if(!radioButton.isChecked()){
+                            Toast.makeText(RegisterActivity.this,"请勾选用户协议",Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+
                     } else {
                         Toast.makeText(RegisterActivity.this, "该用户已存在", Toast.LENGTH_SHORT).show();
                     }

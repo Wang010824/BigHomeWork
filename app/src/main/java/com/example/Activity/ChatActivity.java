@@ -3,13 +3,10 @@ package com.example.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.icu.util.BuddhistCalendar;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.Adapter.MsgAdapter;
 import com.example.myapplication.R;
-import com.example.optimization.CircleImage;
+import com.example.optimization.Msg;
 
 import java.util.ArrayList;
 import java.util.List;

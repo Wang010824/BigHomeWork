@@ -16,7 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.Activity.ChatActivity;
-import com.example.Activity.MessageDatabase;
+import com.example.optimization.MessageDatabase;
 import com.example.Adapter.Fragment3_BaseAdapter;
 import com.example.myapplication.R;
 
