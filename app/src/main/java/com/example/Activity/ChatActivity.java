@@ -129,4 +129,9 @@ public class ChatActivity extends Activity {
         return time;
     }
 
+    //将消息更新到数据库
+//    public void gengxin(String message, String to_name,String from_name){
+//
+//    }
+
 }
