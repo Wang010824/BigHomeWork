@@ -76,8 +76,10 @@ public class Fragment_MessagePage extends Fragment {
             R.drawable.photo9,
             R.drawable.photo10,
     };
+    private Fragment3_BaseAdapter baseAdapter;
     private MessageDatabase message;
     private Intent intent;
+    private int index = -1;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
@@ -93,7 +95,7 @@ public class Fragment_MessagePage extends Fragment {
 
 
         //为页面添加baseAdapter
-        Fragment3_BaseAdapter baseAdapter = new Fragment3_BaseAdapter(fragment3_listview.getContext(), list);
+        baseAdapter = new Fragment3_BaseAdapter(fragment3_listview.getContext(), list);
         fragment3_listview.setAdapter(baseAdapter);
         fragment3_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -104,6 +106,7 @@ public class Fragment_MessagePage extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putString("name",name);
                 bundle.putInt("header",header);
+                index = i;
                 intent.putExtras(bundle);
                 startActivityForResult(intent,1);
             }
@@ -153,7 +156,7 @@ public class Fragment_MessagePage extends Fragment {
     }
 
 
-    //比较时间先后
+    //比较时间先后,true为n>m,n在后
     private static boolean Compare(String n, String m) {
         for(int i = 0; i < n.length(); i ++) {
             if(n.charAt(i) > m.charAt(i))
@@ -184,6 +187,28 @@ public class Fragment_MessagePage extends Fragment {
         String time = year1+month1+date1+hour1+minute1;
         return time;
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1&& resultCode == 1){
+            if(!data.getStringExtra("time").isEmpty()){
+                //获取返回的intent内容
+                String time1 = data.getStringExtra("time");
+                String last_message1 = data.getStringExtra("last_message");
+                //取出list(i)的值
+                String name1 = list.get(index).getMessage_name();
+                int header1 = list.get(index).getHeader();
+                //删掉list(i)
+                list.remove(index);
+                //再重新加入一个message
+                message = new MessageDatabase(name1, last_message1, time1, header1);
+                Add_List(list,message);
+                baseAdapter.notifyDataSetChanged();
+            }
+        }
+    }
+
 
 
 }
