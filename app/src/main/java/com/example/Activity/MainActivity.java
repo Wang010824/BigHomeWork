@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             Intent home_intent=new Intent(MainActivity.this,FunctionActivity.class);
             startActivity(home_intent);
             }else{
-                Toast.makeText(MainActivity.this,username,Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,"帐号密码错误！",Toast.LENGTH_SHORT).show();
             }
 
         });
