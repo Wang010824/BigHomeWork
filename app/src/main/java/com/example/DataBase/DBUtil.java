@@ -21,19 +21,17 @@ public class DBUtil {
     private static PreparedStatement stmt = null;
     private static ResultSet res;
     public static boolean rs=false;
-    static public String email;
     static public String phone;
     static public String username;
     static public String password;
-    static public int id_from;
-    static public int id_to;
-    static public int id=66;
+
+    static public int id;
     static public int id_image;
-    static public String message;
-    static public List<String> list=new ArrayList();
+    static public List<Message> list=new ArrayList<Message>();
     static public ImageView imageview;
     static public String imagestring;
-
+    static public Message message;
+    public Message bridge;
 
     public void getConnection(){
         String url = "jdbc:mysql://rm-bp1zq475tmxkyv8o2mo.mysql.rds.aliyuncs.com:3306/android_database" ;
@@ -71,7 +69,7 @@ public class DBUtil {
         return rs;
     }
 
-    public  boolean SignIn(String username,String password){
+    public  boolean signIn(String username,String password){
 
         DBUtil.username=username;               //根据用户名和密码登录
         DBUtil.password=password;               //数据库中有该用户的信息返回true,否则返回false
@@ -87,17 +85,16 @@ public class DBUtil {
         return rs;
     }
 
-    public void sendmessage(int id_to,int id_from,String message){
-        DBUtil.id_to=id_to;                     //功能：根据id_to、id_from发送message
-        DBUtil.id_from=id_from;                 //
+    public void sendMessage(Message message){
         DBUtil.message=message;
 
         Thread_SendMessage thread_sendmessage=new Thread_SendMessage();
         thread_sendmessage.start();
     }
 
-    public List<String> getmessage(int id_to){
-        DBUtil.id_to=id_to;                     //功能：根据id_to查找message;
+
+    public List<Message> getMessage(Message message){
+        DBUtil.message=message;                     //功能：根据id_to查找message;
         DBUtil.list.clear();                    //返回list<string>.该list的项为message.有所有的留言;
 
         Thread_GetMessage thread_getmessage=new Thread_GetMessage();
@@ -109,12 +106,11 @@ public class DBUtil {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
         return DBUtil.list;
     }
 
-    public void delete_message(int id_to,String message){
-        DBUtil.id_to=id_to;                     //功能：根据id_to和具体的message内容删除某一条消息
+    public void deleteMessage(Message message){
+
         DBUtil.message=message;
 
         Thread_DeleteMessage thread_deletemessage=new Thread_DeleteMessage();
@@ -128,7 +124,7 @@ public class DBUtil {
         }
     }
 
-    public void set_image(String imagestring){  //功能：设置用户的image
+    public void setImage(String imagestring){  //功能：设置用户的image
         DBUtil.imagestring=imagestring;         //需配合image_listener使用
 
         Thread_SetImage thread_setimage=new Thread_SetImage();
@@ -143,7 +139,7 @@ public class DBUtil {
 
     }
 
-    public String get_image(int id_image){  //功能：得到图像
+    public String getImage(int id_image){  //功能：得到图像
         DBUtil.id_image=id_image;           //需配合getimage(int id_image,int imageview_id)使用
         Thread_GetImage thread_getimage=new Thread_GetImage();
         thread_getimage.start();
@@ -234,16 +230,17 @@ public class DBUtil {
     }
 
     class Thread_SendMessage extends Thread{
-        @Override
-        public void run() {
+        public void run(){
             getConnection();
             try {
-                String sql = "insert into leave_message(id_to,id_from,message) values(?,?,?)";
+                String sql = "insert into leave_message(username1,username2,message,time,sign) values(?,?,?,?,?)";
                 stmt = conn.prepareStatement(sql);
                 conn.setAutoCommit(false);
-                stmt.setInt(1, DBUtil.id_to);
-                stmt.setInt(2, DBUtil.id_from);
-                stmt.setString(3, DBUtil.message);
+                stmt.setString(1, DBUtil.message.getUsername1());
+                stmt.setString(2, DBUtil.message.getUsername2());
+                stmt.setString(3, DBUtil.message.getMessage());
+                stmt.setString(4, DBUtil.message.getTime());
+                stmt.setInt(5,DBUtil.message.getSign());
                 stmt.addBatch();
                 stmt.executeBatch();
                 conn.commit();
@@ -262,16 +259,23 @@ public class DBUtil {
     class Thread_GetMessage extends Thread{
         @Override
         public void run() {
+
             getConnection();
             try {
-                String sql = "select message from leave_message where id_to ="+ DBUtil.id_to;
+                String sql = "select * from leave_message where username1 ='"+ DBUtil.message.getUsername1()+"' and username2 ='"+DBUtil.message.getUsername2()+"'";
                 stmt = conn.prepareStatement(sql);
                 // 关闭事务自动提交
                 conn.setAutoCommit(false);
                 res = stmt.executeQuery();//创建数据对象
 
                 while (res.next()){
-                    DBUtil.list.add(res.getString("message"));
+                    bridge=new Message();
+                    bridge.setUsername1(res.getString("username1"));
+                    bridge.setUsername2(res.getString("username2"));
+                    bridge.setMessage(res.getString("message"));
+                    bridge.setTime(res.getString("time"));
+                    bridge.setSign(res.getInt("sign"));
+                    DBUtil.list.add(bridge);
                 }
 
                 res.close();
@@ -293,7 +297,8 @@ public class DBUtil {
         public void run() {
             getConnection();
             try {
-                String sql = "delete from leave_message where id_to="+DBUtil.id_to+" and message ='" +DBUtil.message+"'";
+                String sql = "delete from leave_message where username1='"+DBUtil.message.getUsername1()+"' and username2 ='" +DBUtil.message.getUsername2()+"'";
+                Log.d(TAG, sql);
                 stmt = conn.prepareStatement(sql);
                 conn.setAutoCommit(false);
                 stmt.addBatch();
@@ -311,6 +316,7 @@ public class DBUtil {
 
         }
     }
+
 
     class Thread_SetImage extends Thread{//intent imageview
         @Override

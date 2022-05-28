@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
             username=edittext_username.getText().toString();
             password=edittext_password.getText().toString();
-            if(dbutil.SignIn(username,password)){
+            if(dbutil.signIn(username,password)){
             Intent home_intent=new Intent(MainActivity.this,FunctionActivity.class);
             startActivity(home_intent);
             }else{

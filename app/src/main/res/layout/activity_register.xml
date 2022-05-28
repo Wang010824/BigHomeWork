@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="70dp"
             android:hint="请输入学号或教职工号"
-            android:id="@+id/rsgister_username"
+            android:id="@+id/resgister_username"
             android:lines="1"/>
 
         <EditText
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:hint="请输入手机号"
-            android:id="@+id/rsgister_phone"
+            android:id="@+id/resgister_phone"
             android:lines="1"/>
 
         <EditText
@@ -47,7 +47,7 @@
             android:drawableRight="@drawable/unsee"
             android:hint="请设置密码"
             android:paddingRight="15dp"
-            android:id="@+id/rsgister_password1"
+            android:id="@+id/resgister_password1"
             android:lines="1"
             android:inputType="textPassword"/>
 
@@ -58,7 +58,7 @@
             android:drawableRight="@drawable/unsee"
             android:hint="请再次输入密码"
             android:paddingRight="15dp"
-            android:id="@+id/rsgister_password2"
+            android:id="@+id/resgister_password2"
             android:lines="1"
             android:inputType="textPassword"/>
 
@@ -70,7 +70,7 @@
             android:text="注册"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:id="@+id/rsgister_button"/>
+            android:id="@+id/resgister_button"/>
 
     </LinearLayout>
 
@@ -88,7 +88,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginStart="30dp"
-            android:text="您已阅读并同意《校园帮帮乐用户服务协议》"/>
+            android:text="您已阅读并同意《校园帮帮乐用户服务协议》"
+            android:id="@+id/resgister_radiobutton"/>
 
 
     </LinearLayout>
