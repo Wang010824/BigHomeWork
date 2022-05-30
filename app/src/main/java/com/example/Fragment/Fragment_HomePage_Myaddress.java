@@ -1,6 +1,7 @@
 package com.example.Fragment;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,5 +12,7 @@ public class Fragment_HomePage_Myaddress extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment4_set_address);
+        TextView myback_address = (TextView)findViewById(R.id.myback_address);
+        myback_address.setOnClickListener(view -> finish());
     }
 }

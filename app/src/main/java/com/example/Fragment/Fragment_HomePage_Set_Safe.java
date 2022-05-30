@@ -1,6 +1,7 @@
 package com.example.Fragment;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,5 +12,7 @@ public class Fragment_HomePage_Set_Safe extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment4_set_safe);
+        TextView myback_safe = (TextView)findViewById(R.id.myback_safe);
+        myback_safe.setOnClickListener(view -> finish());
     }
 }

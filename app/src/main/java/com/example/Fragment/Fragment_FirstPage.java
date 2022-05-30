@@ -72,8 +72,12 @@ public class Fragment_FirstPage extends Fragment {
             R.drawable.photo5,
             R.drawable.photo6,
             R.drawable.photo7,
-            R.drawable.photo8};
+            R.drawable.photo8
+    };
+    public int[] photo1 = {
+            R.drawable.photo10,
 
+    };
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,7 +108,7 @@ public class Fragment_FirstPage extends Fragment {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
                 money = result.getString("vmoney","defaultValue");
-                Tasks task=new Tasks(name,info,money,photo[0]);
+                Tasks task=new Tasks(name,info,money,photo1[0]);
                 datas.add(task);
             }
         });
