@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
 
 import com.example.Activity.CaptureActivity;
 import com.example.Adapter.Fragment1_Adapter;
@@ -26,7 +27,9 @@ public class Fragment_FirstPage extends Fragment {
     private ListView mylistview;
     private List<Tasks> datas= new ArrayList<>();
     private Fragment1_Adapter adapter1;
-
+    String name;
+    String info;
+    String money;
     public String[] text = {
             "送快递",
             "送外卖",
@@ -85,8 +88,28 @@ public class Fragment_FirstPage extends Fragment {
         adapter1=new Fragment1_Adapter(getActivity(),datas);
         mylistview.setAdapter(adapter1);
 
-        return fragmentView;
+        getParentFragmentManager().setFragmentResultListener("rname", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                name = result.getString("vname","defaultValue");
+            }
+        });
+        getParentFragmentManager().setFragmentResultListener("rinfo", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                info = result.getString("vinfo","defaultValue");
+            }
+        });
+        getParentFragmentManager().setFragmentResultListener("rmoney", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                money = result.getString("vmoney","defaultValue");
+                Tasks task=new Tasks(name,info,money,photo[0]);
+                datas.add(task);
+            }
+        });
 
+        return fragmentView;
     }
 
     private void initDatas(){
@@ -121,4 +144,5 @@ public class Fragment_FirstPage extends Fragment {
             }
         }
     }
+
 }
