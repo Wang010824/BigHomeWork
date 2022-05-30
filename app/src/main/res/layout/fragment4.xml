@@ -32,11 +32,12 @@
             android:id="@+id/wode_touxiang"
             style="@style/wode_touxiang"
             android:src="@mipmap/wode_touxiang" />
+
         <TextView
             android:id="@+id/wode_nicheng"
             style="@style/wode_nicheng"
-            android:text="@string/wode_nicheng"
-            android:layout_toRightOf="@+id/wode_touxiang" />
+            android:layout_toRightOf="@+id/wode_touxiang"
+            android:text="@string/wode_nicheng" />
     </RelativeLayout>
 
 

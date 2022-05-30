@@ -19,6 +19,7 @@ import com.example.myapplication.R;
 public class MainActivity extends AppCompatActivity {
 
     public Button home_button_signin;
+    public Button home_button_signin1;
     public Button register_button;
     public Button findback_password_button;
     public EditText edittext_password;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         findback_password_button = findViewById(R.id.myfindbackpassword);
         edittext_password=findViewById(R.id.edittext_password);
         edittext_username =findViewById(R.id.edittext_username);
+        home_button_signin1=findViewById(R.id.myosignin);
 
         home_button_signin.setOnClickListener(view -> {
             String username;
@@ -54,6 +56,19 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"用户名或密码错误",Toast.LENGTH_SHORT).show();
             }
 
+        });
+        home_button_signin1.setOnClickListener(view -> {
+            String username;
+            String password;
+
+            username=edittext_username.getText().toString();
+            password=edittext_password.getText().toString();
+            if(dbutil.signIn(username,password)){
+                Intent home_intent=new Intent(MainActivity.this,FunctionActivity.class);
+                startActivity(home_intent);
+            }else{
+                Toast.makeText(MainActivity.this,"用户名或密码错误",Toast.LENGTH_SHORT).show();
+            }
         });
 
         register_button.setOnClickListener(view -> {
