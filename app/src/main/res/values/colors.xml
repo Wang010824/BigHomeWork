@@ -18,5 +18,13 @@
     <color name="yellow">#ffff00</color>
     <color name="rdb_bg">#9F6F6F</color>
     <color name="transparent">#00000000</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="line">#eeeeee</color>
+    <color name="text_color_grey">#777777</color>
+    <color name="bg_btn">#237aec</color>
+    <color name="blue_light">#2e88ff</color>
+    <color name="colorstatus">#3da1ff</color>
 
 </resources>

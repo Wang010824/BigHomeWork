@@ -38,78 +38,57 @@ public class Fragment_HomePage extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         ImageButton myset = (ImageButton) getActivity().findViewById(R.id.myset);
-        myset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent fragment_homepage_set=new Intent();
-                fragment_homepage_set.setClass(getActivity(),Fragment_HomePage_Set.class);
-                startActivity(fragment_homepage_set);
-            }
+        myset.setOnClickListener(view -> {
+            Intent fragment_homepage_set=new Intent();
+            fragment_homepage_set.setClass(getActivity(),Fragment_HomePage_Set.class);
+            startActivity(fragment_homepage_set);
         });
 
         TextView mywallet = (TextView)getActivity().findViewById(R.id.mywallet);
-        mywallet.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent fragment_homepage_wallet=new Intent();
-                fragment_homepage_wallet.setClass(getActivity(),Fragment_HomePage_Wallet.class);
-                startActivity(fragment_homepage_wallet);
-            }
+        mywallet.setOnClickListener(view -> {
+            Intent fragment_homepage_wallet=new Intent();
+            fragment_homepage_wallet.setClass(getActivity(),Fragment_HomePage_Wallet.class);
+            startActivity(fragment_homepage_wallet);
         });
 
         TextView mytask = (TextView)getActivity().findViewById(R.id.mytask);
-        mytask.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent fragment_homepage_task=new Intent();
-                fragment_homepage_task.setClass(getActivity(),Fragment_HomePage_Task.class);
-                startActivity(fragment_homepage_task);
-            }
+        mytask.setOnClickListener(view -> {
+            Intent fragment_homepage_task=new Intent();
+            fragment_homepage_task.setClass(getActivity(),Fragment_HomePage_Task.class);
+            startActivity(fragment_homepage_task);
         });
 
         //评价
         TextView mycomment = (TextView)getActivity().findViewById(R.id.mycomment);
-        mycomment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent fragment_homepage_evaluation=new Intent();
-                fragment_homepage_evaluation.setClass(getActivity(),Fragment_HomePage_Evaluation.class);
-                startActivity(fragment_homepage_evaluation);
-            }
+        mycomment.setOnClickListener(view -> {
+            Intent fragment_homepage_evaluation=new Intent();
+            fragment_homepage_evaluation.setClass(getActivity(),Fragment_HomePage_Evaluation.class);
+            startActivity(fragment_homepage_evaluation);
         });
 
         //售后
         TextView myAfterSale = (TextView)getActivity().findViewById(R.id.myaftersale);
-        myAfterSale.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent fragment_homepage_aftersale=new Intent();
-                fragment_homepage_aftersale.setClass(getActivity(), Fragment_HomePage_AfterSale.class);
-                startActivity(fragment_homepage_aftersale);
-            }
+        myAfterSale.setOnClickListener(view -> {
+            Intent fragment_homepage_aftersale=new Intent();
+            fragment_homepage_aftersale.setClass(getActivity(), Fragment_HomePage_AfterSale.class);
+            startActivity(fragment_homepage_aftersale);
         });
 
         DBUtil dbUtil=new DBUtil();
         circleimage=(CircleImage)getActivity().findViewById(R.id.wode_touxiang);
         getimage(dbUtil.id,R.id.wode_touxiang);
-        circleimage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                galleryIntent.addCategory(Intent.CATEGORY_OPENABLE);
-                galleryIntent.setType("image/*");//图片
-                startActivityForResult(galleryIntent, 0);
-            }
+        circleimage.setOnClickListener(view -> {
+            Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
+            galleryIntent.addCategory(Intent.CATEGORY_OPENABLE);
+            galleryIntent.setType("image/*");//图片
+            startActivityForResult(galleryIntent, 0);
         });
 
 
     }
 
     public void getimage(int id_image,int imageview_id){
-        CircleImage a =(CircleImage)getActivity().findViewById(imageview_id);;
+        CircleImage a =(CircleImage)getActivity().findViewById(imageview_id);
         String imageString;
         DBUtil dbutil=new DBUtil();
 

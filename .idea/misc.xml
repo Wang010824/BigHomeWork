@@ -7,17 +7,26 @@
         <entry key="..\:/AndroidStudioWorkSpace/new/BigHomeWork/app/src/main/res/layout/chat_msg_item.xml" value="0.19384057971014493" />
         <entry key="..\:/AndroidStudioWorkSpace/new/BigHomeWork/app/src/main/res/layout/fragment3_message_item.xml" value="0.1" />
         <entry key="..\:/BigHomeWork/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1175" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/background.xml" value="0.148" />
         <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/bg_edittext_normal.xml" value="0.1035" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/btn_click.xml" value="0.141" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/btn_pay_bg.xml" value="0.148" />
         <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/button_circle1.xml" value="0.1035" />
         <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/button_circle2.xml" value="0.1" />
         <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/button_circle3.xml" value="0.1795" />
         <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/button_circle4.xml" value="0.1595" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/check_bg.xml" value="0.141" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/checp_price_bg.xml" value="0.141" />
         <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/edit_num_bg.xml" value="0.141" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/gradient_ramp.xml" value="0.148" />
         <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/search_button.xml" value="0.1035" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/drawable-xhdpi/text_color.xml" value="0.148" />
         <entry key="..\:/BigHomeWork/app/src/main/res/drawable/background_circle.xml" value="0.1175" />
         <entry key="..\:/BigHomeWork/app/src/main/res/drawable/background_circle_down.xml" value="0.1175" />
         <entry key="..\:/BigHomeWork/app/src/main/res/layout/activity_evaluation.xml" value="0.253125" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/activity_fuction.xml" value="0.253125" />
         <entry key="..\:/BigHomeWork/app/src/main/res/layout/activity_merchandise_list.xml" value="0.1" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/activity_pay.xml" value="0.253125" />
         <entry key="..\:/BigHomeWork/app/src/main/res/layout/evaluation_adapter.xml" value="0.2509057971014493" />
         <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragement4_set_address.xml" value="0.253125" />
         <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragement4_set_safe.xml" value="0.253125" />
@@ -39,9 +48,11 @@
         <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment4_set_safe.xml" value="0.1" />
         <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment4_task.xml" value="0.253125" />
         <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment4_task_listview.xml" value="0.26621847886098404" />
-        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment4_wallet.xml" value="0.20168066580377575" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment4_wallet.xml" value="0.26621847886098404" />
         <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment_merchandise_list.xml" value="0.23854166666666668" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment_pay_detail.xml" value="0.25" />
         <entry key="..\:/BigHomeWork/app/src/main/res/layout/fragment_set_mas.xml" value="0.253125" />
+        <entry key="..\:/BigHomeWork/app/src/main/res/layout/layout_pay.xml" value="0.253125" />
         <entry key="..\:/BigHomeWork/app/src/src/main/res/layout/fragment1.xml" value="0.253125" />
         <entry key="..\:/gitcode/BigHomeWork/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/gitcode/BigHomeWork/app/src/main/res/layout/activity_register.xml" value="0.18177083333333333" />

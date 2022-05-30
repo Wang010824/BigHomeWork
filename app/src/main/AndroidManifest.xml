@@ -46,6 +46,7 @@
         <activity android:name="com.example.Fragment.Fragment_HomePage_Set_mes" />
         <activity android:name="com.example.Fragment.Fragment_HomePage_Set_Safe" />
         <activity android:name="com.example.Activity.CaptureActivity" />
+        <activity android:name="com.example.Activity.PayActivity"/>
     </application>
 
 
