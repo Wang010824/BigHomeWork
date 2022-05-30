@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:drawableLeft="@mipmap/leftarrow"
-            android:text="  设置"
+            android:text="  通知设置"
             android:textColor="@color/black"
             android:gravity="center_vertical|left"
             android:layout_marginLeft="5dp"
@@ -33,23 +33,22 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/myaddress"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  我的收货地址"
-            android:textColor="@color/black"
-            android:textSize="15sp"
+            android:drawableRight="@mipmap/rightarrow"
             android:gravity="center_vertical|left"
-            android:drawableRight="@mipmap/rightarrow"/>
+            android:text="   店铺短信管理                                                            "
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/grey"/>
         <TextView
-            android:id="@+id/myset_hide"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  我的档案"
+            android:text="  消息通知设置                                                              已关闭 "
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -59,10 +58,9 @@
             android:layout_height="8dp"
             android:background="#E6DCDC"/>
         <TextView
-            android:id="@+id/mysafe"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  账号和安全"
+            android:text="  店铺客服接待                                                              已关闭"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -74,7 +72,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  支付"
+            android:text="  帮帮乐好友聊天                                                         已开启"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -84,10 +82,9 @@
             android:layout_height="8dp"
             android:background="#E6DCDC"/>
         <TextView
-            android:id="@+id/myset_mes"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  消息通知"
+            android:text="  帮帮乐进度通知                                                         未开启"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -99,7 +96,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  主题换肤"
+            android:text="  服务通知                                                                     未开启"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -111,7 +108,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  模式切换"
+            android:text="  互动通知                                                                     未开启"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -123,7 +120,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  隐私"
+            android:text="  淘宝团队通知                                                             未开启"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -132,55 +129,11 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/grey"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="  通用"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:gravity="center_vertical|left"
-            android:drawableRight="@mipmap/rightarrow"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#E6DCDC"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="  帮助与反馈"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:gravity="center_vertical|left"
-            android:drawableRight="@mipmap/rightarrow"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="15dp"
-            android:background="#E6DCDC"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="  切换账号"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:gravity="center" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="8dp"
             android:background="#E6DCDC"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="  退出登录"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:gravity="center" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#E6DCDC"/>
-
-
 
     </LinearLayout>
 

@@ -41,6 +41,10 @@
         <activity android:name="com.example.Fragment.Fragment_HomePage_Task" />
         <activity android:name="com.example.Fragment.Fragment_HomePage_Evaluation" />
         <activity android:name="com.example.Fragment.Fragment_HomePage_AfterSale" />
+        <activity android:name="com.example.Fragment.Fragment_HomePage_Myaddress" />
+        <activity android:name="com.example.Fragment.Fragment_HomePage_Set_hide" />
+        <activity android:name="com.example.Fragment.Fragment_HomePage_Set_mes" />
+        <activity android:name="com.example.Fragment.Fragment_HomePage_Set_Safe" />
         <activity android:name="com.example.Activity.CaptureActivity" />
     </application>
 

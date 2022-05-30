@@ -1,6 +1,5 @@
 <resources>
 
-
     <style name="wode_dingbucaidnalan">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">26.2dp</item>

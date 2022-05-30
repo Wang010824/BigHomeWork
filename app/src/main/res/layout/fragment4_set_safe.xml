@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:drawableLeft="@mipmap/leftarrow"
-            android:text="  设置"
+            android:text="  账号与安全"
             android:textColor="@color/black"
             android:gravity="center_vertical|left"
             android:layout_marginLeft="5dp"
@@ -33,23 +33,23 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/myaddress"
+            android:id="@+id/taobaozhanghao"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  我的收货地址"
-            android:textColor="@color/black"
-            android:textSize="15sp"
+            android:drawableRight="@mipmap/rightarrow"
             android:gravity="center_vertical|left"
-            android:drawableRight="@mipmap/rightarrow"/>
+            android:text=" 淘宝账号                                                                          333"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/grey"/>
         <TextView
-            android:id="@+id/myset_hide"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  我的档案"
+            android:text="  手机号                                                                             333 "
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -59,10 +59,9 @@
             android:layout_height="8dp"
             android:background="#E6DCDC"/>
         <TextView
-            android:id="@+id/mysafe"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  账号和安全"
+            android:text="  实名认证                                                                      未认证"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -74,7 +73,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  支付"
+            android:text="  设置登录密码"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -84,10 +83,9 @@
             android:layout_height="8dp"
             android:background="#E6DCDC"/>
         <TextView
-            android:id="@+id/myset_mes"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  消息通知"
+            android:text="  扫脸认证                                                                     未开启"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -99,7 +97,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  主题换肤"
+            android:text="  声音认证                                                                     未开启"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -111,7 +109,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  模式切换"
+            android:text="  登录设备管理                                      查看当前在线的设备"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -123,7 +121,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  隐私"
+            android:text="  账户日志                                                  查看近期敏感操作"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -135,7 +133,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  通用"
+            android:text=" 锁定账户                                                   账户被盗或者丢失"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -147,7 +145,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  帮助与反馈"
+            android:text="  内置安全密码"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center_vertical|left"
@@ -160,7 +158,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="  切换账号"
+            android:text="  注销账户"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:gravity="center" />
@@ -168,17 +166,7 @@
             android:layout_width="match_parent"
             android:layout_height="8dp"
             android:background="#E6DCDC"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="  退出登录"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:gravity="center" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#E6DCDC"/>
+
 
 
 

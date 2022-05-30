@@ -16,5 +16,7 @@
     <color name="white_transparent">#03FFFFFF</color>
     <color name="light_gray">#D8D8D8</color>
     <color name="yellow">#ffff00</color>
+    <color name="rdb_bg">#9F6F6F</color>
+    <color name="transparent">#00000000</color>
 
 </resources>
