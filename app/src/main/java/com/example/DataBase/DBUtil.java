@@ -73,8 +73,7 @@ public class DBUtil {
 
         DBUtil.username=username;               //根据用户名和密码登录
         DBUtil.password=password;               //数据库中有该用户的信息返回true,否则返回false
-        Log.d(TAG, DBUtil.username);
-        Log.d(TAG, DBUtil.password);
+
         Thread_SignIn  thread_sigin=new Thread_SignIn();
         thread_sigin.start();
         try {
@@ -177,7 +176,7 @@ public class DBUtil {
                 res.close();
                 stmt.close();
                 if (DBUtil.rs) {
-                    String sql = "insert into user_p_table(username,phone,password) values(?,?,?,?)";
+                    String sql = "insert into user_p_table(username,phone,password) values(?,?,?)";
                     stmt = conn.prepareStatement(sql);
                     conn.setAutoCommit(false);
                     stmt.setString(1, DBUtil.username);
