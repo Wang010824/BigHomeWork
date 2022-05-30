@@ -16,6 +16,7 @@ import com.example.myapplication.R;
 
 public class Fragment_PublishPage extends Fragment  {
     private Button btn;
+    private String mDatas;
     private EditText et01,et02,et03,et04,et05,et06,et07;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View fragmentView=inflater.inflate(R.layout.fragment2,container,false);
@@ -51,10 +52,18 @@ public class Fragment_PublishPage extends Fragment  {
                     Toast.makeText(getActivity(),"请检查输入",Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(getActivity(),"发布成功",Toast.LENGTH_SHORT).show();
+                    Bundle bundle_name = new Bundle();
+                    Bundle bundle_info = new Bundle();
+                    Bundle bundle_money = new Bundle();
+                    bundle_name.putString("vname", text1);
+                    bundle_info.putString("vinfo", text2);
+                    bundle_money.putString("vmoney", text7);
+                    getParentFragmentManager().setFragmentResult("rname", bundle_name);
+                    getParentFragmentManager().setFragmentResult("rinfo", bundle_info);
+                    getParentFragmentManager().setFragmentResult("rmoney", bundle_money);
                 }
             }
         });
-
         return fragmentView;
     }
 }
