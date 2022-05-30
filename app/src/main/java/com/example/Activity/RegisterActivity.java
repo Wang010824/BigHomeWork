@@ -51,7 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "请再次输入密码", Toast.LENGTH_SHORT).show();
                 } else if(!resgister_radiobutton.isChecked()){
                     Toast.makeText(RegisterActivity.this, "请阅读并同意用户服务协议", Toast.LENGTH_SHORT).show();
-                }else if (buttonpassword1.equals(buttonpassword2)) {
+                } else if (buttonpassword1.equals(buttonpassword2)) {
                     if (dbutil.register(buttonusername, buttonphone, buttonpassword1)) {
                         Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
                         finish();

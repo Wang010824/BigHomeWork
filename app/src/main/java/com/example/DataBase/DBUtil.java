@@ -73,6 +73,8 @@ public class DBUtil {
 
         DBUtil.username=username;               //根据用户名和密码登录
         DBUtil.password=password;               //数据库中有该用户的信息返回true,否则返回false
+        Log.d(TAG, DBUtil.username);
+        Log.d(TAG, DBUtil.password);
         Thread_SignIn  thread_sigin=new Thread_SignIn();
         thread_sigin.start();
         try {
@@ -82,7 +84,7 @@ public class DBUtil {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return rs;
+        return DBUtil.rs;
     }
 
     public void sendMessage(Message message){
@@ -206,8 +208,7 @@ public class DBUtil {
                 // 关闭事务自动提交
                 conn.setAutoCommit(false);
                 res = stmt.executeQuery();//创建数据对象
-                res.next();
-                if(res.getString("password").equals(DBUtil.password)){
+                if(res.next()&&res.getString("password").equals(DBUtil.password)){
                     DBUtil.rs=true;
                     DBUtil.id=res.getInt("id");
                 }else{
@@ -216,7 +217,6 @@ public class DBUtil {
                 conn.commit();
                 res.close();
                 stmt.close();
-
             }catch (SQLException e){
                 e.printStackTrace();
             }finally {

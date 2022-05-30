@@ -2,6 +2,7 @@ package com.example.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public EditText edittext_password;
     public EditText edittext_username;
     public DBUtil dbutil=new DBUtil();
+
     Fragment_FirstPage Fragment_FirstPage = new Fragment_FirstPage();
     Fragment_PublishPage Fragment_PublishPage = new Fragment_PublishPage();
     Fragment_MessagePage Fragment_MessagePage = new Fragment_MessagePage();
@@ -39,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         edittext_password=findViewById(R.id.edittext_password);
         edittext_username =findViewById(R.id.edittext_username);
 
-
         home_button_signin.setOnClickListener(view -> {
             String username;
             String password;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             Intent home_intent=new Intent(MainActivity.this,FunctionActivity.class);
             startActivity(home_intent);
             }else{
-                Toast.makeText(MainActivity.this,username,Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this,"用户名或密码错误",Toast.LENGTH_SHORT).show();
             }
 
         });

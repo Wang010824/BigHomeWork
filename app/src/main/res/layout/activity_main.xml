@@ -95,7 +95,8 @@
                 android:layout_marginRight="70dp"
                 android:text=" 组织登录 "
                 android:textColor="@color/white"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                android:id="@+id/myosignin"/>
 
     </FrameLayout>
 
