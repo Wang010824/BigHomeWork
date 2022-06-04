@@ -40,14 +40,13 @@ public class Fragment_PublishPage extends Fragment  {
                 String text5=et05.getText().toString().trim();
                 String text6=et06.getText().toString().trim();
                 String text7=et07.getText().toString().trim();
-
+                text7 = "费用: " + text7;
                 if(        text1.length() == 0
                         || text2.length() == 0
                         || text3.length() == 0
                         || text4.length() == 0
                         || text5.length() == 0
                         || text6.length() == 0
-                        || text7.length() == 0
                 ){
                     Toast.makeText(getActivity(),"请检查输入",Toast.LENGTH_SHORT).show();
                 }else{
