@@ -32,6 +32,11 @@ public class DBUtil {
     static public String imagestring;
     static public Message message;
     public Message bridge;
+    static Task task;
+    public Task bridge1;
+    static public List<Task> list1=new ArrayList<Task>();
+    static public String taskname;
+    static public String taskdetail;
 
     public void getConnection(){
         String url = "jdbc:mysql://rm-bp1zq475tmxkyv8o2mo.mysql.rds.aliyuncs.com:3306/android_database" ;
@@ -60,7 +65,7 @@ public class DBUtil {
 
         try {
             while (!thread_register.getState().toString().equals("TERMINATED")) {
-                TimeUnit.MILLISECONDS.sleep(500);
+                TimeUnit.MILLISECONDS.sleep(100);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -78,7 +83,7 @@ public class DBUtil {
         thread_sigin.start();
         try {
             while (!thread_sigin.getState().toString().equals("TERMINATED")) {
-                TimeUnit.MILLISECONDS.sleep(500);
+                TimeUnit.MILLISECONDS.sleep(100);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -102,7 +107,7 @@ public class DBUtil {
         thread_getmessage.start();
         try {
             while (!thread_getmessage.getState().toString().equals("TERMINATED")) {
-                TimeUnit.MILLISECONDS.sleep(500);
+                TimeUnit.MILLISECONDS.sleep(100);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -118,7 +123,7 @@ public class DBUtil {
         thread_deletemessage.start();
         try {
             while (!thread_deletemessage.getState().toString().equals("TERMINATED")) {
-                TimeUnit.MILLISECONDS.sleep(500);
+                TimeUnit.MILLISECONDS.sleep(100);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -132,7 +137,7 @@ public class DBUtil {
         thread_setimage.start();
         try {
             while (!thread_setimage.getState().toString().equals("TERMINATED")) {
-                TimeUnit.MILLISECONDS.sleep(500);
+                TimeUnit.MILLISECONDS.sleep(100);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -147,13 +152,59 @@ public class DBUtil {
 
         try {
             while (!thread_getimage.getState().toString().equals("TERMINATED")) {
-                TimeUnit.MILLISECONDS.sleep(500);
+                TimeUnit.MILLISECONDS.sleep(100);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
         return DBUtil.imagestring;
+    }
+
+    public void setTask(Task task){
+        DBUtil.task=task;
+
+        Thread_SetTask thread_settask=new Thread_SetTask();
+        thread_settask.start();
+        try {
+            while (!thread_settask.getState().toString().equals("TERMINATED")) {
+                TimeUnit.MILLISECONDS.sleep(100);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public List<Task> getTask(){
+
+
+        Thread_GetTask thread_gettask=new Thread_GetTask();
+        thread_gettask.start();
+        try {
+            while (!thread_gettask.getState().toString().equals("TERMINATED")) {
+                TimeUnit.MILLISECONDS.sleep(100);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return list1;
+    }
+
+    public void deleteTask(String taskdetail,String taskname){
+        DBUtil.taskname=taskname;
+        DBUtil.taskdetail=taskdetail;
+
+        Thread_DeleteTask thread_deletetask=new Thread_DeleteTask();
+        thread_deletetask.start();
+        try {
+            while (!thread_deletetask.getState().toString().equals("TERMINATED")) {
+                TimeUnit.MILLISECONDS.sleep(100);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     class Thread_Register extends Thread{
@@ -203,6 +254,7 @@ public class DBUtil {
             getConnection();
             try {
                 String sql = "select * from user_p_table where username = '"+ DBUtil.username+"'";
+
                 stmt = conn.prepareStatement(sql);
                 // 关闭事务自动提交
                 conn.setAutoCommit(false);
@@ -210,6 +262,7 @@ public class DBUtil {
                 if(res.next()&&res.getString("password").equals(DBUtil.password)){
                     DBUtil.rs=true;
                     DBUtil.id=res.getInt("id");
+                    DBUtil.username=res.getString("username");
                 }else{
                     DBUtil.rs=false;
                 }
@@ -367,6 +420,103 @@ public class DBUtil {
                     e.printStackTrace();
                 }
             }
+        }
+    }
+
+    class Thread_SetTask extends Thread{
+        @Override
+        public void run() {
+            getConnection();
+            try {
+                    String sql = "insert into task_table(id,taskname,taskdetail,publisher,address,addressdetail,phone,reward) values(?,?,?,?,?,?,?,?)";
+                    stmt = conn.prepareStatement(sql);
+                    conn.setAutoCommit(false);
+                    stmt.setInt(1,DBUtil.task.getId());
+                    stmt.setString(2,DBUtil.task.getName());
+                    stmt.setString(3,DBUtil.task.getDatail());
+                    stmt.setString(4, DBUtil.task.getPublisher());
+                    stmt.setString(5, DBUtil.task.getAddress());
+                    stmt.setString(6, DBUtil.task.getAddressdetail());
+                    stmt.setString(7, DBUtil.task.getPhone());
+                    stmt.setString(8, DBUtil.task.getReward());
+                    stmt.addBatch();
+                    stmt.executeBatch();
+                    conn.commit();
+            }catch (SQLException e){
+                e.printStackTrace();
+            }finally {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    class Thread_GetTask extends Thread{
+        @Override
+        public void run() {
+
+            getConnection();
+            try {
+                String sql = "select * from task_table";
+                stmt = conn.prepareStatement(sql);
+                // 关闭事务自动提交
+                conn.setAutoCommit(false);
+                res = stmt.executeQuery();//创建数据对象
+                list1.clear();
+
+                while (res.next()){
+                    bridge1=new Task();
+                    bridge1.setId(res.getInt("id"));
+                    bridge1.setName(res.getString("taskname"));
+                    bridge1.setAddress(res.getString("address"));
+                    bridge1.setAddressdetail(res.getString("addressdetail"));
+                    bridge1.setPhone(res.getString("phone"));
+                    bridge1.setPublisher(res.getString("publisher"));
+                    bridge1.setReward(res.getString("reward"));
+                    bridge1.setDatail(res.getString("taskdetail"));
+                    bridge1.setTaskid(res.getInt("sign"));
+                    DBUtil.list1.add(bridge1);
+                }
+
+                res.close();
+                conn.commit();
+                stmt.close();
+            }catch (SQLException e){
+                e.printStackTrace();
+            }finally {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    class Thread_DeleteTask extends Thread{
+        public void run() {
+            getConnection();
+            try {
+                String sql = "delete from task_table where taskname='"+DBUtil.taskname+"' and taskdetail ='" +DBUtil.taskdetail+"'";
+                Log.d(TAG, sql);
+                stmt = conn.prepareStatement(sql);
+                conn.setAutoCommit(false);
+                stmt.addBatch();
+                stmt.executeBatch();
+                conn.commit();
+            }catch (SQLException e){
+                e.printStackTrace();
+            }finally {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
         }
     }
 }

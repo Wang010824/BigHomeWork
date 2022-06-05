@@ -12,12 +12,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.DataBase.DBUtil;
+import com.example.DataBase.Task;
 import com.example.myapplication.R;
 
 public class Fragment_PublishPage extends Fragment  {
     private Button btn;
     private String mDatas;
     private EditText et01,et02,et03,et04,et05,et06,et07;
+    public Task task;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View fragmentView=inflater.inflate(R.layout.fragment2,container,false);
         btn = fragmentView.findViewById(R.id.fragment2_btn_pull);
@@ -29,6 +32,8 @@ public class Fragment_PublishPage extends Fragment  {
         et05 = fragmentView.findViewById(R.id.fragment2_et_05);
         et06 = fragmentView.findViewById(R.id.fragment2_et_06);
         et07 = fragmentView.findViewById(R.id.fragment2_et_07);
+
+        task=new Task();
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,16 +55,20 @@ public class Fragment_PublishPage extends Fragment  {
                 ){
                     Toast.makeText(getActivity(),"请检查输入",Toast.LENGTH_SHORT).show();
                 }else{
+                    task.setId(DBUtil.id);
+                    task.setName(text1);
+                    task.setDatail(text2);
+                    task.setPublisher(text3);
+                    task.setAddress(text4);
+                    task.setAddressdetail(text5);
+                    task.setPhone(text6);
+                    task.setReward(text7);
+
+                    DBUtil dbutil=new DBUtil();
+                    dbutil.setTask(task);
+
                     Toast.makeText(getActivity(),"发布成功",Toast.LENGTH_SHORT).show();
-                    Bundle bundle_name = new Bundle();
-                    Bundle bundle_info = new Bundle();
-                    Bundle bundle_money = new Bundle();
-                    bundle_name.putString("vname", text1);
-                    bundle_info.putString("vinfo", text2);
-                    bundle_money.putString("vmoney", text7);
-                    getParentFragmentManager().setFragmentResult("rname", bundle_name);
-                    getParentFragmentManager().setFragmentResult("rinfo", bundle_info);
-                    getParentFragmentManager().setFragmentResult("rmoney", bundle_money);
+
                 }
             }
         });
